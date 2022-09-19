@@ -9,6 +9,7 @@ public class PizzaTester {
         System.out.println(cheese.isDeepDish());
         System.out.println(pepperoni.getNumToppings());
         System.out.println(pepperoni.getStore());
+        System.out.println('test edit');
 
         cheese.setStore("Pizza Hut");
         cheese.setInches(3);
