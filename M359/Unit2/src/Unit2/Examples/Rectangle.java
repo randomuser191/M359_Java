@@ -1,6 +1,7 @@
 package Unit2.Examples;
 
 public class Rectangle {
+
     /*
     These are instance variables - They are created for every instance of the Rectangle class
 
@@ -34,6 +35,6 @@ public class Rectangle {
         System.out.println("The area is : " + height * width);
     }
     public void printPerimeter(){
-        System.out.println("The perimeter is : " + ((2 * height) + (2 * width)));
+        System.out.println("The area is : " + height * width);
     }
 }
