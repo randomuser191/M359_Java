@@ -31,7 +31,7 @@ public class Pizza {
         String str = "";
         str += "My pizza is from " + store + ". It is " + inches + " inches. \n";
         if(isDeepDish){
-            str+= "I love deep dish.";
+            str+= "I love deep dish. ";
         }else{
             str += "Thin crust is the way to go.";
         }
