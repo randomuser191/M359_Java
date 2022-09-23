@@ -2,7 +2,7 @@ package U3.Examples;
 
 public class PizzaTester {
     public static void main(String[] args) {
-        Pizza cheese = new Pizza("Dominoes", 6, false);
+        Pizza cheese = new Pizza("Dominoes", 3, false);
         Pizza pepperoni = new Pizza("Pizza Hut", 3, 5, true);
 
 //        System.out.println(cheese.getNumToppings());
@@ -11,6 +11,7 @@ public class PizzaTester {
 //        System.out.println(pepperoni.getStore());
         System.out.println(pepperoni);
         System.out.println(cheese);
+        System.out.println(pepperoni.comparePizza(cheese));
 //        cheese.setStore("Pizza Hut");
 //        cheese.setInches(3);
 //        cheese.setDeepDish(true);

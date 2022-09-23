@@ -61,7 +61,18 @@ public class Pizza {
     public int getNumToppings() {
         return numToppings;
     }
-
+    public String comparePizza(Pizza other){
+        int sizeDiff = this.inches - other.inches;
+        int toppingsDiff = this.numToppings - other.numToppings;
+        if(sizeDiff != 0){
+            return "Difference in Inches: " + Math.abs(sizeDiff) + " inches";
+        }
+        if(toppingsDiff != 0){
+            return "Difference in number of toppings: " + Math.abs(toppingsDiff) + " toppings";
+        }else{
+            return "Same Pizza";
+        }
+    }
     public void setNumToppings(int n) {
         numToppings = n;
     }
