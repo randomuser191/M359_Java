@@ -12,6 +12,5 @@ public class Student {
     public boolean equals(Student other){
         return (this.fName.equals(other.fName) && this.lName.equals(other.lName));
     }
-    public int compareTo(Student other){
-    }
+
 }
