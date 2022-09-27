@@ -49,7 +49,6 @@ public class Section_3_7Examples_JUnitTest {
         per6 = null;
         per8 = null;
     }
-
     // Test equals method for Shoe when shoes are equal
     @Test
     public void equalsShoeTestOne() {
