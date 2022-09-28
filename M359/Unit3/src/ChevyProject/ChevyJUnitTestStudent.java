@@ -37,8 +37,8 @@ public class ChevyJUnitTestStudent {
         // this method tests the get/set method calls in driver
         @Test
         public void getSetMethodsTestOne() {
-            traxBase.setMiles(15);
-            int actual = traxBase.getMiles();
+            traxBase.setMileage(15);
+            int actual = traxBase.getMileage();
             int expected = 15;
             assertEquals(expected, actual);
         }
@@ -47,88 +47,86 @@ public class ChevyJUnitTestStudent {
         @Test
         public void getSetMethodsTestTwo() {
             // Set traxLux mileage to 175 with both a luxury and 4WD package
-            traxLux.setHasLuxuryPkg(true);
-            traxLux.setMiles(175);
-            traxLux.setHas4WDPkg(true);
+            traxLux.setLuxPkg(true);
+            traxLux.setMileage(175);
+            traxLux.setFwdPkg(true);
             String expected = "true175true";
-            String actual = traxLux.isHasLuxuryPkg() + "" + traxLux.getMiles()+ "" + traxLux.isHas4WDPkg();
+            String actual = traxLux.isLuxPkg() + "" + traxLux.getMileage()+ "" + traxLux.isFwdPkg();
             assertEquals(expected, actual);
         }
 
-        // tests if compareTo works when calling Chevy object has more miles
-        @Test
-        public void compareToMethodTestThree() {
-            int actual = corvetteClassic.compareTo(corvetteSport);
-            assertEquals(true, actual > 0);
-        }
+    // tests if compareTo works when calling Chevy object has more miles
+    @Test
+    public void compareToMethodTestOne() {
+        int actual = corvetteClassic.compareTo(corvetteSport);
+        assertEquals(true, actual > 0);
+    }
 
-        // tests if compareTo works when calling Chevy object has less miles
-        @Test
-        public void compareToMethodTestFour() {
-            int actual = corvetteSport.compareTo(corvetteClassic);
-            assertEquals(true, actual < 0);
-        }
+    // tests if compareTo works when calling Chevy object has less miles
+    @Test
+    public void compareToMethodTestTwo() {
+        int actual = corvetteSport.compareTo(corvetteClassic);
+        assertEquals(true, actual < 0);
+    }
 
-        // tests if compareTo recognizes equal Chevy by miles
-        @Test
-        public void compareToMethodTestFive() {
-            int actual = corvetteSport.compareTo(corvetteSport);
-            assertEquals(0, actual);
-        }
+    // tests if compareTo recognizes equal Chevy by miles
+    @Test
+    public void compareToMethodTestThree() {
+        int actual = corvetteSport.compareTo(corvetteSport);
+        assertEquals(0, actual);
+    }
 
-        // tests if equals method recognizes equal Chevy objects
-        @Test
-        public void equalsMethodTestSix() {
-            Chevy other = new Chevy();
-            other.setModel(bluesilverado.getModel());
-            other.setNewVehicle(bluesilverado.isNewVehicle());
-            other.setColor(bluesilverado.getColor());
+    // tests if equals method recognizes equal Chevy objects
+    @Test
+    public void equalsMethodTestOne() {
+        Chevy other = new Chevy();
+        other.setModel(bluesilverado.getModel());
+       // other.setNewVehicle(bluesilverado.isNewVehicle());
+        other.setColor(bluesilverado.getColor());
 
-            boolean actual = bluesilverado.equals(other);
-            assertEquals(true, true);
-        }
+        boolean actual = bluesilverado.equals(other);
+        assertEquals(true, true);
+    }
 
-        // tests if equals method recognizes nonequal Chevy objects
-        @Test
-        public void equalsMethodTestSeven() {
-            Chevy other = new Chevy();
-            other.setModel("Different model");
+    // tests if equals method recognizes nonequal Chevy objects
+    @Test
+    public void equalsMethodTestTwo() {
+        Chevy other = new Chevy();
+        other.setModel("Different model");
+        boolean actual = bluesilverado.equals(other);
+        assertEquals(false, actual);
+    }
 
-            boolean actual = bluesilverado.equals(other);
-            assertEquals(false, actual);
-        }
+    // tests base price
+    @Test
+    public void calcPriceTestOne() {
+        double actual = traxBase.getBasePrice();
+        double expected = 16000.0;
+        assertEquals(expected, actual, 0.01);
+    }
 
-        // tests base price
-        @Test
-        public void calcPriceTestEight() {
-            double actual = traxBase.getBase_price();
-            double expected = 16000.0;
-            assertEquals(expected, actual, 0.01);
-        }
+    // tests priceWithUpgrades when a luxury package exists
+    @Test
+    public void calcPriceTestTwo() {
+        double actual = corvetteClassic.getPriceWUpgrades();
+        double expected = 73800.0;
+        assertEquals(expected, actual, 0.01);
+    }
 
-        // tests priceWithUpgrades when a luxury package exists
-        @Test
-        public void calcPriceTestNine() {
-            double actual = corvetteClassic.getPriceWithUpgrades();
-            double expected = 73800.0;
-            assertEquals(expected, actual, 0.01);
-        }
-
-      // tests priceWithUpgrades when a luxury and 4WD package exists
-        @Test
-        public void calcPriceTestTen() {
-        double actual = bluesilverado.getPriceWithUpgrades();
+    // tests priceWithUpgrades when a luxury and 4WD package exists
+    @Test
+    public void calcPriceTestThree() {
+        double actual = bluesilverado.getPriceWUpgrades();
         double expected = 48920.0;
         assertEquals(expected, actual, 0.01);
-        }
+    }
 
     // tests grandtotal
-        @Test
-        public void calcPriceTestEleven() {
-            double actual = bluesilverado.getGrandTotal();
-            double expected = 54888.24;
-            assertEquals(expected, actual, 0.01);
-        }
-
+    @Test
+    public void calcPriceTestFour() {
+        double actual = bluesilverado.getTotal();
+        double expected = 54888.24;
+        assertEquals(expected, actual, 0.01);
+    }
 
 }
