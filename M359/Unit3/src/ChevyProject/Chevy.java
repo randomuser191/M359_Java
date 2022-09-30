@@ -43,7 +43,7 @@ public class Chevy {
         luxPkg = false;
         spPkg = false;
         fwdPkg = false;
-        priceWUpgrades = 0;
+        priceWUpgrades = basePrice;
         total = basePrice;
         calcPrice();
     }
@@ -169,6 +169,7 @@ public class Chevy {
 
     public void setLuxPkg(boolean luxPkg) {
         this.luxPkg = luxPkg;
+        calcPrice();
     }
 
     public boolean isFwdPkg() {
@@ -177,6 +178,7 @@ public class Chevy {
 
     public void setFwdPkg(boolean fwdPkg) {
         this.fwdPkg = fwdPkg;
+        calcPrice();
     }
 
     public boolean isSpPkg() {
@@ -185,5 +187,6 @@ public class Chevy {
 
     public void setSpPkg(boolean spPkg) {
         this.spPkg = spPkg;
+        calcPrice();
     }
 }
