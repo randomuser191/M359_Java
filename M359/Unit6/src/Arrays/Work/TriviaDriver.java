@@ -8,16 +8,12 @@ public class TriviaDriver {
         int streak = 0;
         g.getData();
         Question[] q = g.getQuestions();
-        String indexes = "";
-
+        int len = q.length;
         System.out.println("\nWelcome to Akshat's Trivia. What is your name?");
         String name = inp.nextLine();
         System.out.println("Ok " + name + ". Let's begin!\n");
-
-        for(int i = 14; i < q.length; i++){
+        for(int i = 0; i < len; i++){
             int idx = (int)(Math.random() * q.length);
-            if(indexes.contains("" + idx)) idx = (int)(Math.random() * q.length);
-            indexes += "" + idx;
             System.out.println(q[idx]);
             System.out.println("Type A, B, C, or D below");
             String userC = inp.next();
@@ -43,10 +39,9 @@ public class TriviaDriver {
                 System.out.println("Enter Y or N");
                 userC = inp.next();
             }
-
-
+            q = g.removeQ(q, idx);
         }
-        System.out.println("\n Congratulations " + name + "! You completed the Trivia. Here's how you did. \n");
+        System.out.println("\n Congratulations " + name + "! You completed the Trivia. Here's how you did: \n");
         System.out.println("\n" + g.getStats(true));
     }
 }

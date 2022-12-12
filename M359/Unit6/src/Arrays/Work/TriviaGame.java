@@ -48,7 +48,17 @@ public class TriviaGame {
             if(end) str+= "Percent Correct: " + ((double)(qCor)/qAns) * 100 + "%\n";
             return str;
         }
-
+        public Question[] removeQ(Question[] q, int idx){
+            Question[] q2 = new Question[q.length - 1];
+            int count = 0;
+            for(int i = 0; i < q.length; i++){
+                if(!(i == idx)){
+                    q2[count] = q[i];
+                    count++;
+                }
+            }
+            return q2;
+        }
     public int getStreak() {
         return streak;
     }
